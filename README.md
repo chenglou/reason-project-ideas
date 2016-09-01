@@ -47,7 +47,6 @@ GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-grap
 
 ### IReason
 
-Reason Notebooks
-
+[Jupyter Notebooks](http://jupyter.org), for Reason. There's already an [IOCaml notebook](https://github.com/andrewray/iocaml)!
 
 ### Add yours here!
