@@ -43,7 +43,9 @@ For those who want a pure AST editor, this is the transition step toward that id
 Similar to the idea above, but easier to achieve: we could use `refmt`, compiled to JS, to parse OCaml syntax in an online code snippet and turn it into Reason syntax, and vice-versa.
 
 ### Javascript-to-(insufficiently typed)-Reason transpiler
-Using babel or flow, parse javascript & translate as well as possible to the Reason AST. Then use refmt's [JSON import](https://github.com/facebook/reason/pull/724) & edit the reason until it's well-typed. (Or you could annotate everything as `Obj.magic` from above).
+Using [Babel](http://babeljs.io) or [Flow](https://flowtype.org), parse JavaScript & translate it as much as possible to Reason. Then use the Reason formatter (refmt)'s [JSON import](https://github.com/facebook/reason/pull/724) to edit the Reason code until it's well-typed (alternatively, you could annotate everything as `Obj.magic` from above).
+
+It's basically a JS-to-Reason compiler, but one which requires much less work and a bit of manual intervention. That'd be one way of doing interop...
 
 ### [GraphQL type system](http://graphql.org/docs/typesystem/), using actual types
 GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-graphql-schema). With ppx and OCaml's type system, we can generate the introspection tools through `type myShape = {foo: int}` rather than through an informal, hand-rolled type system a-la `let myShape = graphQLSchema ({field: "foo", type: "int"})`.
