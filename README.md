@@ -4,6 +4,8 @@ This repo lists some of the stuff I personally find very compelled to build. Unf
 
 Feel free to contribute!
 
+## Far-fetched ideas
+
 ### Ppx macro that turns any function into a CLI command
 Reason (OCaml)'s function has all the features we want in a terminal tool's interface:
 - labelled arguments (which turn into CLI flags) with optional renaming (flag shortcut)
@@ -39,6 +41,8 @@ Reason gets this closer than most languages. Check in the AST, diff using the AS
 
 For those who want a pure AST editor, this is the transition step toward that idea.
 
+Once syntax becomes a personal preference, the printer's correctness becomes much less of a concern. Up until this point we needed very clear and deterministic rules on how things should print in our editor. In the future, maybe we can use some heavy lifting to print out the code using complicated heuristics learned from the coder's habit (machine learning? This *is* the far-fetched ideas section =)).
+
 ### Browser extension to toggle between syntaxes
 Similar to the idea above, but easier to achieve: we could use `refmt`, compiled to JS, to parse OCaml syntax in an online code snippet and turn it into Reason syntax, and vice-versa.
 
@@ -54,4 +58,8 @@ GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-grap
 
 [Jupyter Notebooks](http://jupyter.org), for Reason. There's already an [IOCaml notebook](https://github.com/andrewray/iocaml)!
 
-### Add yours here!
+## Realistic ideas
+
+### Themed documentation/code style
+
+[Odoc](https://github.com/ocaml-doc/odoc) generates documentation with overridable styles. On the web, while we're printing the code/doc in the person's favorite syntax, we might as well allow setting the entire style of the code/doc page.
