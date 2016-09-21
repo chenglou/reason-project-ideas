@@ -36,20 +36,8 @@ Furthermore, If the user provides `["hello", "world"]` as input and "hello world
 ### `Obj.magic` to bypass the type checker temporarily
 Type `Obj.magic` type acts like an `any` type. We can have a special mode that annotates all of the values of a file as `Obj.magic`, and iterate like a dynamic language.
 
-### Check in the AST
-Reason gets this closer than most languages. Check in the AST, diff using the AST, and reify the AST into a concrete syntax using the built-in `refmt`. No more syntax debates in the future: your visual preference stays local. Heck, nobody checks in their editor theme and mandates the whole team to use it, right?
-
-For those who want a pure AST editor, this is the transition step toward that idea.
-
-Once syntax becomes a personal preference, the printer's correctness becomes much less of a concern. Up until this point we needed very clear and deterministic rules on how things should print in our editor. In the future, maybe we can use some heavy lifting to print out the code using complicated heuristics learned from the coder's habit (machine learning? This *is* the far-fetched ideas section =)).
-
 ### Browser extension to toggle between syntaxes
 Similar to the idea above, but easier to achieve: we could use `refmt`, compiled to JS, to parse OCaml syntax in an online code snippet and turn it into Reason syntax, and vice-versa.
-
-### Javascript-to-(insufficiently typed)-Reason transpiler
-Using [Babel](http://babeljs.io) or [Flow](https://flowtype.org), parse JavaScript & translate it as much as possible to Reason. Then use the Reason formatter (refmt)'s [JSON import](https://github.com/facebook/reason/pull/724) to edit the Reason code until it's well-typed (alternatively, you could annotate everything as `Obj.magic` from above).
-
-It's basically a JS-to-Reason compiler, but one which requires much less work and a bit of manual intervention. That'd be one way of doing interop...
 
 ### [GraphQL type system](http://graphql.org/docs/typesystem/), using actual types
 GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-graphql-schema). With ppx and OCaml's type system, we can generate the introspection tools through `type myShape = {foo: int}` rather than through an informal, hand-rolled type system a-la `let myShape = graphQLSchema ({field: "foo", type: "int"})`.
@@ -58,8 +46,23 @@ GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-grap
 
 [Jupyter Notebooks](http://jupyter.org), for Reason. There's already an [IOCaml notebook](https://github.com/andrewray/iocaml)!
 
+### Shell-like syntax for reason
+Good for shell scripting!
+
 ## Realistic ideas
 
 ### Themed documentation/code style
 
 [Odoc](https://github.com/ocaml-doc/odoc) generates documentation with overridable styles. On the web, while we're printing the code/doc in the person's favorite syntax, we might as well allow setting the entire style of the code/doc page.
+
+### Javascript-to-(insufficiently typed)-Reason transpiler
+Using [Babel](http://babeljs.io) or [Flow](https://flowtype.org), parse JavaScript & translate it as much as possible to Reason. Then use the Reason formatter (refmt)'s [JSON import](https://github.com/facebook/reason/pull/724) to edit the Reason code until it's well-typed (alternatively, you could annotate everything as `Obj.magic` from above).
+
+It's basically a JS-to-Reason compiler, but one which requires much less work and a bit of manual intervention. That'd be one way of doing interop...
+
+### Check in the AST
+Reason gets this closer than most languages. Check in the AST, diff using the AST, and reify the AST into a concrete syntax using the built-in `refmt`. No more syntax debates in the future: your visual preference stays local. Heck, nobody checks in their editor theme and mandates the whole team to use it, right?
+
+For those who want a pure AST editor, this is the transition step toward that idea.
+
+Once syntax becomes a personal preference, the printer's correctness becomes much less of a concern. Up until this point we needed very clear and deterministic rules on how things should print in our editor. In the future, maybe we can use some heavy lifting to print out the code using complicated heuristics learned from the coder's habit (machine learning? This *is* the far-fetched ideas section =)).
