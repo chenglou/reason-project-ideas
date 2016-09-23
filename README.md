@@ -47,7 +47,7 @@ GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-grap
 [Jupyter Notebooks](http://jupyter.org), for Reason. There's already an [IOCaml notebook](https://github.com/andrewray/iocaml)!
 
 ### Shell-like syntax for reason
-Good for shell scripting!
+Good for shell scripting! Also, check out [Shelljs](https://github.com/shelljs/shelljs). A Reason port would be great!
 
 ## Realistic ideas
 
