@@ -49,6 +49,17 @@ GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-grap
 ### Shell-like syntax for reason
 Good for shell scripting! Also, check out [Shelljs](https://github.com/shelljs/shelljs). A Reason port would be great!
 
+### Show the reified type info instead of the generic one
+Hovering over a value in an editor sometimes shows you the generic type rather than the specific one. For example:
+
+```
+let identity x => a;
+let a = 1;
+let b = identity a;
+```
+
+Hovering over `identity` will show the generic type signature `'a -> 'a`. Ideally, I'd like to see it in context: `int -> int`, with the actual, generic type also specified somewhere (in order not to mislead users).
+
 ## Realistic ideas
 
 ### Themed documentation/code style
@@ -66,3 +77,6 @@ Reason gets this closer than most languages. Check in the AST, diff using the AS
 For those who want a pure AST editor, this is the transition step toward that idea.
 
 Once syntax becomes a personal preference, the printer's correctness becomes much less of a concern. Up until this point we needed very clear and deterministic rules on how things should print in our editor. In the future, maybe we can use some heavy lifting to print out the code using complicated heuristics learned from the coder's habit (machine learning? This *is* the far-fetched ideas section =)).
+
+### Debugging experience
+OCaml has a time-traveling debugger! Right now it's full terminal-based and interacting with it requires a couple keystrokes too many for common actions. We can sugar coat it.
