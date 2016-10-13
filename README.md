@@ -60,6 +60,9 @@ let b = identity a;
 
 Hovering over `identity` will show the generic type signature `'a -> 'a`. Ideally, I'd like to see it in context: `int -> int`, with the actual, generic type also specified somewhere (in order not to mislead users).
 
+### Automatic variable naming
+Once we start checking in the AST, we can have an easy config option for auto-naming some variable names based on their position in the syntax tree. While we're killing the debate about syntax and formatting, might as well kill the debate about naming things!
+
 ## Realistic ideas
 
 ### Themed documentation/code style
