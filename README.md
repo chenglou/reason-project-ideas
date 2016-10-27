@@ -63,6 +63,9 @@ Hovering over `identity` will show the generic type signature `'a -> 'a`. Ideall
 ### Automatic variable naming
 Once we start checking in the AST, we can have an easy config option for auto-naming some variable names based on their position in the syntax tree. While we're killing the debate about syntax and formatting, might as well kill the debate about naming things!
 
+### README generator
+We already have ocamldoc and odoc for great documentation page generated from interface files. But those documentation often lack emphasis and usage demos (see https://github.com/noffle/art-of-readme). It'd be great if can let people mark some types, docblock comments, and unit tests as "important" and turn them into prominently displayed usage demos in the README.
+
 ## Realistic ideas
 
 ### Themed documentation/code style
