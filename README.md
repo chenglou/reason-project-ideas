@@ -36,9 +36,6 @@ Furthermore, If the user provides `["hello", "world"]` as input and "hello world
 ### `Obj.magic` to bypass the type checker temporarily
 Type `Obj.magic` type acts like an `any` type. We can have a special mode that annotates all of the values of a file as `Obj.magic`, and iterate like a dynamic language.
 
-### Browser extension to toggle between syntaxes
-Similar to the idea above, but easier to achieve: we could use `refmt`, compiled to JS, to parse OCaml syntax in an online code snippet and turn it into Reason syntax, and vice-versa.
-
 ### [GraphQL type system](http://graphql.org/docs/typesystem/), using actual types
 GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-graphql-schema). With ppx and OCaml's type system, we can generate the introspection tools through `type myShape = {foo: int}` rather than through an informal, hand-rolled type system a-la `let myShape = graphQLSchema ({field: "foo", type: "int"})`.
 
@@ -86,3 +83,8 @@ Once syntax becomes a personal preference, the printer's correctness becomes muc
 
 ### Debugging experience
 OCaml has a time-traveling debugger! Right now it's full terminal-based and interacting with it requires a couple keystrokes too many for common actions. We can sugar coat it.
+
+## Done (already!)
+
+### Browser extension to toggle between syntaxes (https://github.com/rickyvetter/reason-tools)
+Similar to the idea above, but easier to achieve: we could use `refmt`, compiled to JS, to parse OCaml syntax in an online code snippet and turn it into Reason syntax, and vice-versa.
