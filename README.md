@@ -20,6 +20,9 @@ Sometimes I don't really want full-blown unit tests. In addition to the guarante
 
 Examples are great. We'd also be able to extract these tests and display them in the API docs.
 
+### [Jest](https://facebook.github.io/jest/)-like snapshot testing
+Jest's snapshot testing is really helpful. We might be able to leverage language-level concepts like marshalling (serializing the entire program, including closures) and pretty-printing through Format, to have almost free snapshot testing!
+
 ### API search by giving example input & output
 *See: http://www.wilfred.me.uk/blog/2016/07/30/example-driven-development*. Another one, built on top of types, would be Haskell's [Hoogle](https://www.haskell.org/hoogle/) and OCaml's very own [OCamlScope](https://github.com/camlspotter/ocamloscope).
 
