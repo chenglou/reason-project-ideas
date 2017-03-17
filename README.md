@@ -4,7 +4,16 @@ This repo lists some of the stuff I personally find very compelled to build. Unf
 
 Feel free to contribute!
 
-## Far-fetched ideas
+### `[@@ocaml.deprecated]` as an API explorer
+`[@@ocaml.deprecated "use foo instead"]` can be attached to an expression so that the compiler will warn at dev time about the deprecated API. But we can use that to indicate something like:
+
+```reason
+let log = "" [@@ocaml.deprecated "This is located under Js.log"]
+let consoleLog = "" [@@ocaml.deprecated "This is located under Js.log"]
+let consolelog = "" [@@ocaml.deprecated "This is located under Js.log"]
+```
+
+And let people explore which library contains which API they're trying to find.
 
 ### Ppx macro that turns any function into a CLI command
 Reason (OCaml)'s function has all the features we want in a terminal tool's interface:
@@ -65,8 +74,6 @@ Once we start checking in the AST, we can have an easy config option for auto-na
 
 ### README generator
 We already have ocamldoc and odoc for great documentation page generated from interface files. But those documentation often lack emphasis and usage demos (see https://github.com/noffle/art-of-readme). It'd be great if can let people mark some types, docblock comments, and unit tests as "important" and turn them into prominently displayed usage demos in the README.
-
-## Realistic ideas
 
 ### Themed documentation/code style
 
