@@ -15,7 +15,7 @@ let consolelog = "" [@@ocaml.deprecated "This is located under Js.log"]
 
 And let people explore which library contains which API they're trying to find.
 
-### [OCamlScope](http://camlspotter.blogspot.com/2013/06/ocamlscope-new-ocaml-api-search-by.html) or [Agolia](https://www.algolia.com) for the generated documentation
+### [OCamlScope](http://camlspotter.blogspot.com/2013/06/ocamlscope-new-ocaml-api-search-by.html) or [Algolia](https://www.algolia.com) for the generated documentation
 
 Easier types search & search in general.
 
