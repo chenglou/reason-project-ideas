@@ -55,6 +55,12 @@ Type `Obj.magic` type acts like an `any` type. We can have a special mode that a
 ### [GraphQL type system](http://graphql.org/docs/typesystem/), using actual types
 GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-graphql-schema). With ppx and OCaml's type system, we can generate the introspection tools through `type myShape = {foo: int}` rather than through an informal, hand-rolled type system a-la `let myShape = graphQLSchema ({field: "foo", type: "int"})`.
 
+### Rewrite Pixi in Reason
+Like [this](https://github.com/pixijs/pixi.js) but written in Reason.
+
+### Bindings to ReactJS Blueprint
+BuckleScript bindings to https://github.com/palantir/blueprint
+
 ### IReason
 
 [Jupyter Notebooks](http://jupyter.org), for Reason. There's already an [IOCaml notebook](https://github.com/andrewray/iocaml)!
