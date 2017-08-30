@@ -102,7 +102,7 @@ Once syntax becomes a personal preference, the printer's correctness becomes muc
 OCaml has a time-traveling debugger! Right now it's full terminal-based and interacting with it requires a couple keystrokes too many for common actions. We can sugar coat it.
 
 ### Refactoring tool
-Some DSL like `re-factor "module Foo" "module Bar"`
+Some DSL like `re-factor "module Foo" "module Bar"`. `re-factor "module __A = {type t;}" "module __A = {type t2;}"`
 
 ## Done (already!)
 
