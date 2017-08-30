@@ -58,9 +58,6 @@ GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-grap
 ### Rewrite Pixi in Reason
 Like [this](https://github.com/pixijs/pixi.js) but written in Reason.
 
-### Bindings to ReactJS Blueprint
-BuckleScript bindings to https://github.com/palantir/blueprint
-
 ### IReason
 
 [Jupyter Notebooks](http://jupyter.org), for Reason. There's already an [IOCaml notebook](https://github.com/andrewray/iocaml)!
