@@ -104,7 +104,7 @@ OCaml has a time-traveling debugger! Right now it's full terminal-based and inte
 ### Refactoring tool
 Some DSL like `re-factor "module Foo" "module Bar"`. `re-factor "module __A = {type t;}" "module __A = {type t2;}"`.
 
-## Done (already!)
 
-### Browser extension to toggle between syntaxes (https://github.com/rickyvetter/reason-tools)
-Similar to the idea above, but easier to achieve: we could use `refmt`, compiled to JS, to parse OCaml syntax in an online code snippet and turn it into Reason syntax, and vice-versa.
+### Dev-time Function Instrumentation
+See https://github.com/mattphillips/babel-plugin-console
+
