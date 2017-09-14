@@ -4,17 +4,6 @@ This repo lists some of the stuff I personally find very compelled to build. Unf
 
 Feel free to contribute!
 
-### `[@@ocaml.deprecated]` as an API explorer
-`[@@ocaml.deprecated "use foo instead"]` can be attached to an expression so that the compiler will warn at dev time about the deprecated API. But we can use that to indicate something like:
-
-```reason
-let log = "" [@@ocaml.deprecated "This is located under Js.log"]
-let consoleLog = "" [@@ocaml.deprecated "This is located under Js.log"]
-let consolelog = "" [@@ocaml.deprecated "This is located under Js.log"]
-```
-
-And let people explore which library contains which API they're trying to find.
-
 ### [OCamlScope](http://camlspotter.blogspot.com/2013/06/ocamlscope-new-ocaml-api-search-by.html) or [Algolia](https://www.algolia.com) for the generated documentation
 
 Easier types search & search in general.
@@ -55,8 +44,29 @@ Type `Obj.magic` type acts like an `any` type. We can have a special mode that a
 ### [GraphQL type system](http://graphql.org/docs/typesystem/), using actual types
 GraphQL schemas are built like [this](http://graphql.org/blog/#building-the-graphql-schema). With ppx and OCaml's type system, we can generate the introspection tools through `type myShape = {foo: int}` rather than through an informal, hand-rolled type system a-la `let myShape = graphQLSchema ({field: "foo", type: "int"})`.
 
-### Rewrite Pixi in Reason
-Like [this](https://github.com/pixijs/pixi.js) but written in Reason.
+### Smart editor-agnostic templates
+Context: [language-server](http://langserver.org) has something called "code action"; upon seeing e.g. a type error, an editor can ask the server whether there's an automatic one-click fix.
+We can ~~abuse~~ leverage this capability to provide some editor snippets/templates, e.g. a boilerplate ReasonReact component. Here's the workflow (prepare to be mind blown):
+
+- User writes `[%%%React.reducer "MyComponent" foo bar];`
+- A corresponding ppx activates and transforms that into: `let a = pleaseRemoveThisLineAfterFillingTheTemplate; let component = ReasonReact.reducerComponent "MyComponent"; let make ::foo ::bar _children => ...;`
+- Aka, the ppx just scaffolds a component template _under the hood_
+- Code action triggers because of a type error (`pleaseRemoveThisLineAfterFillingTheTemplate` is not found)
+- Click on code action to fix the problem; the language-server macroexpands the ppx and returns the inlined result.
+- User removes that offending line and fills the implementation details.
+
+Alternatively, it'd be nice if language-server comes with a code template system =). But this arguably contrived approach might help dissuading newcomers from using ppx too much.
+
+### `[@@ocaml.deprecated]` as an API explorer
+`[@@ocaml.deprecated "use foo instead"]` can be attached to an expression so that the compiler will warn at dev time about the deprecated API. But we can use that to indicate something like:
+
+```reason
+let log = "" [@@ocaml.deprecated "This is located under Js.log"]
+let consoleLog = "" [@@ocaml.deprecated "This is located under Js.log"]
+let consolelog = "" [@@ocaml.deprecated "This is located under Js.log"]
+```
+
+And let people explore which library contains which API they're trying to find.
 
 ### IReason
 
