@@ -4,6 +4,8 @@ This repo lists some of the stuff I personally find very compelled to build. Unf
 
 Feel free to contribute!
 
+### https://github.com/0x00A/scratches for Reason
+
 ### [OCamlScope](http://camlspotter.blogspot.com/2013/06/ocamlscope-new-ocaml-api-search-by.html) or [Algolia](https://www.algolia.com) for the generated documentation
 
 Easier types search & search in general.
